@@ -1,0 +1,18 @@
+services:
+  app:
+    image: 'tech-challenge:latest'
+    build: .
+    container_name: app
+    depends_on:
+      - mongodb
+    environment:
+      - 'SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/produtos'
+    ports:
+      - '8080:8080'
+  mongodb:
+    image: 'mongo:latest'
+    environment:
+      - 'MONGO_INITDB_ROOT_USERNAME=myuser'
+      - 'MONGO_INITDB_ROOT_PASSWORD=secret'
+    ports:
+      - '27017:27017'
