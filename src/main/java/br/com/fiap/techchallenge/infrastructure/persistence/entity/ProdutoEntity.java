@@ -9,12 +9,6 @@ import br.com.fiap.techchallenge.domain.Ingrediente;
 import br.com.fiap.techchallenge.domain.Produto;
 import br.com.fiap.techchallenge.domain.enums.Tipo;
 import br.com.fiap.techchallenge.infrastructure.persistence.entity.enums.TipoEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,14 +16,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @Getter
 @Setter(AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Document(collection = "Produtos")
 public class ProdutoEntity {
-    @Id
+
     private UUID id;
 
     private String nome;
@@ -38,10 +31,8 @@ public class ProdutoEntity {
 
     private BigDecimal preco;
 
-    @ManyToMany
     private List<IngredienteEntity> ingredientes;
 
-    @Enumerated(EnumType.STRING)
     private TipoEntity tipo;
 
     public Produto toDomain() {

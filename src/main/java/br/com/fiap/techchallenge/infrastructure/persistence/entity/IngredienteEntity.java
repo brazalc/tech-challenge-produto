@@ -1,9 +1,6 @@
 package br.com.fiap.techchallenge.infrastructure.persistence.entity;
 
 import br.com.fiap.techchallenge.domain.Ingrediente;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
-@Entity
 @Getter
 @Setter(AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -21,7 +17,6 @@ import java.util.UUID;
 @Document(collection = "Ingredientes")
 public class IngredienteEntity {
 
-    @Id
     private UUID id;
     private String descricao;
 
