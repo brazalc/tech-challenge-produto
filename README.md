@@ -1,4 +1,4 @@
-# Tech Challange - FIAP
+# Tech Challange API Produto - FIAP
 
 [![codecov](https://codecov.io/gh/brunoalbrito/tech-challange-fiap/graph/badge.svg?token=FW8FL3RML6)](https://codecov.io/gh/brunoalbrito/tech-challange-fiap)
 
@@ -64,28 +64,11 @@ docker build --no-cache -t tech-challenge .
 Para implantar os recursos necessários no Kubernetes, execute os seguintes comandos:
 
 ```bash
-kubectl apply -f postgres-configmap-1.yaml
-kubectl apply -f postgres-pvc-pv-2.yaml
-kubectl apply -f postgres-deployment-3.yaml
-kubectl apply -f postgres-service-4.yaml
+kubectl apply -f mongo-configmap-1.yaml
+kubectl apply -f mongo-deployment-3.yaml
 kubectl apply -f tech-challenge-fiap-deployment-5.yaml
 kubectl apply -f tech-challenge-fiap-service-6.yaml
 kubectl apply -f hpa.yaml
-```
-
-## 6. Conectar o DBeaver ao PostgreSQL
-
-Para conectar o DBeaver ao PostgreSQL implantado no Kubernetes, execute os seguintes comandos:
-
-```bash
-kubectl get pods
-kubectl port-forward pod/[pod-name] 5432:5432
-```
-
-Após isso, conecte o DBeaver à seguinte URL:
-
-```
-localhost:5432/postgres
 ```
 
 Use as seguintes credenciais:
@@ -105,7 +88,3 @@ Após isso, você pode acessar a seguinte URL para acessar a API de combos:
 ```
 localhost:8080/api/combos
 ```
-
-# Arquitetura
-<img src="/ArquiteturaSistema.drawio.png">
-<img src="/ArquiteturaInfraestrutura.drawio.png">
