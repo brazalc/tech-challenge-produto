@@ -5,6 +5,7 @@ import br.com.fiap.techchallenge.application.gateways.ProdutoGateway;
 import br.com.fiap.techchallenge.domain.Combo;
 import br.com.fiap.techchallenge.domain.Produto;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.ComboRequest;
+import br.com.fiap.techchallenge.infrastructure.controllers.request.ProdutoRequest;
 
 import java.util.List;
 import java.util.UUID;
@@ -21,12 +22,9 @@ public class CriaComboInteractor {
     }
 
     public Combo execute(ComboRequest comboRequest) {
-        List<UUID> Uuids = comboRequest.getProdutos()
-                .stream()
-                .map(UUID::fromString)
-                .toList();
 
-        List<Produto> produtos = produtoGateway.buscaPorUuids(Uuids);
+        List<Produto> produtos = comboRequest.getProdutos().stream().map(ProdutoRequest::toDomain).toList();
+
         Combo combo = Combo.criaCombo(UUID.randomUUID(), produtos);
 
         return comboGateway.salva(combo);

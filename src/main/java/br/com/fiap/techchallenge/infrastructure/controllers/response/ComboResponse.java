@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ComboResponse {
-    private String id;
+    private UUID id;
 
     private BigDecimal precoTotal;
 
@@ -23,7 +24,7 @@ public class ComboResponse {
 
     public static ComboResponse fromDomain(Combo combo) {
         return ComboResponse.builder()
-                .id(combo.getId().toString())
+                .id(combo.getId())
                 .precoTotal(combo.valorTotal())
                 .produtos(combo.getProdutos().stream().map(ProdutoResponse::fromDomain).toList())
                 .build();

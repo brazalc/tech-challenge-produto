@@ -14,7 +14,7 @@ public class ComboDtoMapper {
 
     public ComboResponse toResponse(Combo combo) {
         return ComboResponse.builder()
-                .id(combo.getId().toString())
+                .id(combo.getId())
                 .precoTotal(combo.valorTotal())
                 .produtos(toProdutoResponseList(combo.getProdutos()))
                 .build();
@@ -34,7 +34,7 @@ public class ComboDtoMapper {
 
     private ProdutoResponse toProdutoResponse(Produto produto) {
         return ProdutoResponse.builder()
-                .id(produto.getId().toString())
+                .id(produto.getId())
                 .nome(produto.getNome())
                 .descricao(produto.getDescricao())
                 .preco(produto.getPreco())
