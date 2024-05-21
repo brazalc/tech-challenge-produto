@@ -40,7 +40,7 @@ public class Combo {
                 .equals(Set.of(Tipo.LANCHE, Tipo.BEBIDA, Tipo.ACOMPANHAMENTO));
 
         if (!temTodosOsProdutos) {
-            throw new IllegalArgumentException("Combo deve conter um lanche, uma bebida e uma sobremesa");
+            throw new IllegalArgumentException("Combo deve conter um lanche, uma bebida e um acompanhamento");
         }
     }
 

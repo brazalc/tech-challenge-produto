@@ -12,12 +12,10 @@ import java.util.UUID;
 
 public class ComboRepositoryGateway implements ComboGateway {
 
-    private final ProdutoRepository produtoRepository;
 
     private final ComboRepository comboRepository;
 
-    public ComboRepositoryGateway(ProdutoRepository produtoRepository, ComboRepository comboRepository) {
-        this.produtoRepository = produtoRepository;
+    public ComboRepositoryGateway(ComboRepository comboRepository) {
         this.comboRepository = comboRepository;
     }
 
@@ -33,8 +31,5 @@ public class ComboRepositoryGateway implements ComboGateway {
                 .toList();
     }
 
-    private ProdutoEntity findProdutoById(UUID produtoId) {
-        return produtoRepository.findById(produtoId)
-                .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado."));
-    }
+
 }

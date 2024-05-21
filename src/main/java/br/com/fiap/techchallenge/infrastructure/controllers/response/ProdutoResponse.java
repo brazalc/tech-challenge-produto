@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProdutoResponse {
-    private String id;
+    private UUID id;
 
     private String nome;
 
@@ -29,7 +30,7 @@ public class ProdutoResponse {
 
     public static ProdutoResponse fromDomain(final Produto produto) {
         return ProdutoResponse.builder()
-                .id(produto.getId().toString())
+                .id(produto.getId())
                 .nome(produto.getNome())
                 .descricao(produto.getDescricao())
                 .preco(produto.getPreco())

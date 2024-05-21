@@ -1,0 +1,84 @@
+{
+   "id": "80feb26c-f9b4-4aa1-9512-cea000b663b8",
+   "produtos": [
+      {
+         "id": "d174d424-c218-4277-a13f-c70c1ea566d7",
+         "nome": "Hamburguer",
+         "preco": 5.5,
+         "descricao": "Hamburguer de Carne Bovina com Queijo",
+         "ingredientes": [
+            {
+               "id": "a123d456-e789-1234-b567-89c0de123f45",
+               "descricao": "Pão"
+            },
+            {
+               "id": "1f0ac2e5-019e-4026-b2d4-271e1126aa86",
+               "descricao": "Carne Bovina"
+            },
+            {
+               "id": "3bd30eaa-4aa3-4288-9113-00c341167604",
+               "descricao": "Queijo"
+            },
+            {
+               "id": "afa0bc27-7cd8-494f-94fb-72996cc9968e",
+               "descricao": "Alface"
+            },
+            {
+               "id": "7f2c2da4-cc86-4eb2-aad6-156dff84f783",
+               "descricao": "Tomate"
+            }
+         ],
+         "tipo": "LANCHE"
+      },
+      {
+         "id": "359dc4cf-c28f-47b1-b29e-74895ea22fe8",
+         "nome": "Refrigerante",
+         "preco": 2.0,
+         "descricao": "Refrigerante de Cola",
+         "ingredientes": [
+            {
+               "id": "42443ff8-76ec-404b-b7bc-6671f40ffddf",
+               "descricao": "Água"
+            },
+            {
+               "id": "45097c81-9360-44cb-a0aa-afdebce70ada",
+               "descricao": "Açúcar"
+            },
+            {
+               "id": "143ac370-35a8-411e-a19d-6835d49eee47",
+               "descricao": "Dióxido de Carbono"
+            },
+            {
+               "id": "3792d7a9-3f33-426a-a409-c9acb89c721a",
+               "descricao": "Corante Caramelo"
+            },
+            {
+               "id": "11f47a88-c436-4143-bba9-9011812b222d",
+               "descricao": "Aroma Natural"
+            }
+         ],
+         "tipo": "BEBIDA"
+      },
+      {
+         "id": "8f457cdc-ce5f-40ff-b5b1-ff99715f9321",
+         "nome": "Batata Frita",
+         "preco": 3.0,
+         "descricao": "Batatas Fritas Crocantes",
+         "ingredientes": [
+            {
+               "id": "b4727d62-f682-4ffb-8792-083acb073d44",
+               "descricao": "Batatas"
+            },
+            {
+               "id": "6ed51bf5-8ac0-4adc-b152-6f7b8e7c5c31",
+               "descricao": "Óleo de Soja"
+            },
+            {
+               "id": "950e2150-6a9c-460b-aa55-dce233ff472d",
+               "descricao": "Sal"
+            }
+         ],
+         "tipo": "ACOMPANHAMENTO"
+      }
+   ]
+}
