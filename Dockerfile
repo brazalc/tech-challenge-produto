@@ -5,7 +5,7 @@ WORKDIR /home/gradle/src
 RUN gradle build --no-daemon
 
 #container
-MAINTAINER tech-challenge
+MAINTAINER tech-challenge-produto
 FROM openjdk:17-alpine
 EXPOSE 8080
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/app.jar
