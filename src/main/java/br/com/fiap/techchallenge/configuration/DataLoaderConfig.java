@@ -1,10 +1,7 @@
 package br.com.fiap.techchallenge.configuration;
 
-import br.com.fiap.techchallenge.domain.Produto;
 import br.com.fiap.techchallenge.infrastructure.persistence.entity.ComboEntity;
-import br.com.fiap.techchallenge.infrastructure.persistence.entity.ProdutoEntity;
 import br.com.fiap.techchallenge.infrastructure.persistence.repository.ComboRepository;
-import br.com.fiap.techchallenge.infrastructure.persistence.repository.ProdutoRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 @Configuration
 public class DataLoaderConfig {

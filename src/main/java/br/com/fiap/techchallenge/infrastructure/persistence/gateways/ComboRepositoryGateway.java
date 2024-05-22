@@ -3,15 +3,11 @@ package br.com.fiap.techchallenge.infrastructure.persistence.gateways;
 import br.com.fiap.techchallenge.application.gateways.ComboGateway;
 import br.com.fiap.techchallenge.domain.Combo;
 import br.com.fiap.techchallenge.infrastructure.persistence.entity.ComboEntity;
-import br.com.fiap.techchallenge.infrastructure.persistence.entity.ProdutoEntity;
 import br.com.fiap.techchallenge.infrastructure.persistence.repository.ComboRepository;
-import br.com.fiap.techchallenge.infrastructure.persistence.repository.ProdutoRepository;
 
 import java.util.List;
-import java.util.UUID;
 
 public class ComboRepositoryGateway implements ComboGateway {
-
 
     private final ComboRepository comboRepository;
 
@@ -30,6 +26,4 @@ public class ComboRepositoryGateway implements ComboGateway {
                 .map(ComboEntity::toDomain)
                 .toList();
     }
-
-
 }
