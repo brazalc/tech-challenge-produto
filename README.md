@@ -19,3 +19,4 @@ Na pasta root:
   ```bash
     docker compose up && ./gradlew bootRun
   ```
+
