@@ -2,9 +2,6 @@ package br.com.fiap.techchallenge.application.usecases.combo;
 
 import br.com.fiap.techchallenge.application.gateways.ComboGateway;
 import br.com.fiap.techchallenge.domain.Combo;
-import br.com.fiap.techchallenge.domain.Ingrediente;
-import br.com.fiap.techchallenge.domain.Produto;
-import br.com.fiap.techchallenge.domain.enums.Tipo;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.ComboRequest;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.IngredienteRequest;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.ProdutoRequest;
@@ -15,13 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -32,18 +26,14 @@ public class CriaComboInteractorTest {
     @Mock
     private ComboGateway comboGateway;
 
-    @Mock
-    private ProdutoGateway produtoGateway;
-
     @InjectMocks
     private CriaComboInteractor criaComboInteractor;
 
     @BeforeEach
     void setUp() {
         comboGateway = mock(ComboGateway.class);
-        produtoGateway = mock(ProdutoGateway.class);
 
-        criaComboInteractor = new CriaComboInteractor(comboGateway, produtoGateway);
+        criaComboInteractor = new CriaComboInteractor(comboGateway);
     }
 
     @Test
@@ -83,37 +73,6 @@ public class CriaComboInteractorTest {
                 .produtos(List.of(lancheRequest, bebidaRequest, acompanhamentoRequest))
                 .build();
 
-        Produto lanche = Produto.builder()
-                .id(UUID.randomUUID())
-                .nome("Coca-Cola")
-                .descricao("Refrigerante de cola")
-                .preco(BigDecimal.TEN)
-                .ingredientes(List.of(Ingrediente.criaIngrediente(UUID.randomUUID(), "Cola")))
-                .tipo(Tipo.LANCHE)
-                .build();
-
-        Produto acompanhamento = Produto.builder()
-                .id(UUID.randomUUID())
-                .nome("Batata Frita")
-                .descricao("Batata frita com cheddar e bacon")
-                .preco(BigDecimal.TEN)
-                .ingredientes(List.of(Ingrediente.criaIngrediente(UUID.randomUUID(), "Batata")))
-                .tipo(Tipo.ACOMPANHAMENTO)
-                .build();
-
-        Produto bebida = Produto.builder()
-                .id(UUID.randomUUID())
-                .nome("Coca-Cola")
-                .descricao("Refrigerante de cola")
-                .preco(BigDecimal.TEN)
-                .ingredientes(List.of(Ingrediente.criaIngrediente(UUID.randomUUID(), "Cola")))
-                .tipo(Tipo.BEBIDA)
-                .build();
-
-
-        List<Produto> produtos = Arrays.asList(lanche, acompanhamento, bebida);
-
-        when(produtoGateway.buscaPorUuids(anyList())).thenReturn(produtos);
 
         when(comboGateway.salva(any(Combo.class)))
                 .thenAnswer(invocationOnMock -> invocationOnMock.getArgument(0));
