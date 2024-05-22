@@ -1,4 +1,4 @@
-package br.com.fiap.techchallenge.infrastructure;
+package br.com.fiap.techchallenge.infrastructure.controller;
 
 import br.com.fiap.techchallenge.application.usecases.combo.CriaComboInteractor;
 import br.com.fiap.techchallenge.application.usecases.combo.ListaComboInteractor;
@@ -12,7 +12,7 @@ import br.com.fiap.techchallenge.infrastructure.controllers.request.ComboRequest
 import br.com.fiap.techchallenge.infrastructure.controllers.request.IngredienteRequest;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.ProdutoRequest;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.enums.TipoRequest;
-import br.com.fiap.techchallenge.infrastructure.request.ComboRequestTest;
+import br.com.fiap.techchallenge.infrastructure.controller.request.ComboRequestTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

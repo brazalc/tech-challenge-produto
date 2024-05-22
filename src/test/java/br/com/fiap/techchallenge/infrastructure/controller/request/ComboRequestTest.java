@@ -1,4 +1,4 @@
-package br.com.fiap.techchallenge.infrastructure.request;
+package br.com.fiap.techchallenge.infrastructure.controller.request;
 
 import br.com.fiap.techchallenge.infrastructure.controllers.request.ProdutoRequest;
 import lombok.AccessLevel;
