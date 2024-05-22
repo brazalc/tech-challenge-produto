@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: tech-challenge-produto
   labels:
     app: deployment
 spec:
@@ -15,7 +15,7 @@ spec:
         app: deployment
     spec:
       containers:
-        - name: fiap-tech-challenge
+        - name: tech-challenge-produto
           image: 'ufoindustry/tech-challenge-produto:latest'
           imagePullPolicy: IfNotPresent
           ports:
@@ -38,11 +38,15 @@ spec:
             requests:
               cpu: "1m"
           env:
-            - name: SPRING_DATASOURCE_URL
-              value: mongodb://mongodb:27017/produtos
+            - name: SPRING_DATA_MONGODB_HOST
+              value: mongodb-produto
+            - name: SPRING_DATA_MONGODB_PORT
+              value: "27017"
+            - name: SPRING_DATA_MONGODB_DATABASE
+              value: produtos
             - name: SPRING_DATA_MONGODB_USERNAME
               value: myuser
             - name: SPRING_DATASOURCE_PASSWORD
               value: secret
-            - name: SPRING_DATA_MONGODB_PASSWORD
-              value: create
+            - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
+              value: admin
