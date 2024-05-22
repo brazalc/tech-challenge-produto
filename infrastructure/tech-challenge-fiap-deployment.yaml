@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fiap-tech-challenge
-          image: 'ufoindustry/tech-challenge:latest'
+          image: 'ufoindustry/tech-challenge-produto:latest'
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -39,10 +39,10 @@ spec:
               cpu: "1m"
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://postgres:5432/postgres
-            - name: SPRING_DATASOURCE_USERNAME
+              value: mongodb://mongodb:27017/produtos
+            - name: SPRING_DATA_MONGODB_USERNAME
               value: myuser
             - name: SPRING_DATASOURCE_PASSWORD
               value: secret
-            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+            - name: SPRING_DATA_MONGODB_PASSWORD
               value: create
