@@ -12,7 +12,6 @@ import br.com.fiap.techchallenge.infrastructure.controllers.request.ComboRequest
 import br.com.fiap.techchallenge.infrastructure.controllers.request.IngredienteRequest;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.ProdutoRequest;
 import br.com.fiap.techchallenge.infrastructure.controllers.request.enums.TipoRequest;
-import br.com.fiap.techchallenge.infrastructure.controller.request.ComboRequestTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -65,7 +64,9 @@ public class ComboControllerTest {
                         .build()))
                 .build();
 
-        ComboRequestTest comboRequestTest = ComboRequestTest.criaComboRequestTest(List.of(produtoRequest));
+        ComboRequest comboRequestTest = ComboRequest.builder()
+                .produtos(List.of(produtoRequest))
+                .build();
 
         Ingrediente ingrediente = Ingrediente.criaIngrediente(id, "descricao");
         Produto lanche = Produto.builder()
@@ -111,7 +112,9 @@ public class ComboControllerTest {
 
     @Test
     public void deveRetornarBadRequestQuandoListaDeProdutosForNula() throws Exception {
-        ComboRequestTest comboRequestTest = ComboRequestTest.criaComboRequestTest(null);
+        ComboRequest comboRequestTest = ComboRequest.builder()
+                .produtos(null)
+                .build();
 
         when(criaComboInteractor.execute(any(ComboRequest.class)))
                 .thenThrow(new IllegalArgumentException("Lista de produtos deve estar preenchida"));
@@ -124,7 +127,9 @@ public class ComboControllerTest {
 
     @Test
     public void deveRetornarBadRequestQuandoListaDeProdutosForVazia() throws Exception {
-        ComboRequestTest comboRequestTest = ComboRequestTest.criaComboRequestTest(List.of());
+        ComboRequest comboRequestTest = ComboRequest.builder()
+                .produtos(List.of())
+                .build();
 
         when(criaComboInteractor.execute(any(ComboRequest.class)))
                 .thenThrow(new IllegalArgumentException("Lista de produtos deve estar preenchida"));
@@ -137,7 +142,9 @@ public class ComboControllerTest {
 
     @Test
     public void deveRetornarBadRequestQuandoListaDeProdutosForInvalida() throws Exception {
-        ComboRequestTest comboRequestTest = ComboRequestTest.criaComboRequestTest(List.of());
+        ComboRequest comboRequestTest = ComboRequest.builder()
+                .produtos(List.of())
+                .build();
 
         when(criaComboInteractor.execute(any(ComboRequest.class)))
                 .thenThrow(new IllegalArgumentException("Lista de produtos deve estar preenchida"));
