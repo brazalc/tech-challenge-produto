@@ -1,6 +1,6 @@
 # Tech Challenge - Produto API
-[![build](https://github.com/brunoalbrito/tech-challenge-pagamento/actions/workflows/codecov.yaml/badge.svg)](https://github.com/brunoalbrito/tech-challenge-pagamento/actions/workflows/codecov.yaml)
-[![codecov](https://codecov.io/gh/brunoalbrito/tech-challenge-pagamento/graph/badge.svg?token=EI0P7UB4NN)](https://codecov.io/gh/brunoalbrito/tech-challenge-pagamento)
+[![Codecov](https://github.com/brazalc/tech-challenge-produto/actions/workflows/codecov.yml/badge.svg)](https://github.com/brazalc/tech-challenge-produto/actions/workflows/codecov.yml)
+[![codecov](https://codecov.io/gh/brazalc/tech-challenge-pedido/graph/badge.svg?token=CGQ7D0FWHA)](https://codecov.io/gh/brazalc/tech-challenge-pedido)
 
 Esse repositório contem a API de produto do Tech Challenge para o curso de Arquitetura de Software da FIAP.
 
