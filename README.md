@@ -1,5 +1,6 @@
 # Tech Challenge - Produto API
-[![codecov](https://codecov.io/gh/brazalc/tech-challenge-pedido/graph/badge.svg?token=CGQ7D0FWHA)](https://codecov.io/gh/brazalc/tech-challenge-pedido)
+[![Codecov](https://github.com/brazalc/tech-challenge-produto/actions/workflows/codecov.yml/badge.svg)](https://github.com/brazalc/tech-challenge-produto/actions/workflows/codecov.yml)
+[![codecov](https://codecov.io/gh/brazalc/tech-challenge-produto/graph/badge.svg?token=0OEL36QVGK)](https://codecov.io/gh/brazalc/tech-challenge-produto)
 
 Esse repositório contem a API de produto do Tech Challenge para o curso de Arquitetura de Software da FIAP.
 
